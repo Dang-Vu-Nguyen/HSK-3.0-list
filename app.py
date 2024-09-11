@@ -22,11 +22,12 @@ st.subheader('Displaying the selected columns from the Excel file')
 st.dataframe(df)
 
 # If you want to allow users to download the data:
-@st.cache
+@st.cache_data  # Updated to st.cache_data
 def convert_df(df):
     return df.to_csv(index=False).encode('utf-8')
 
 csv_data = convert_df(df)
 
 # Button for downloading the filtered data
-st.download_button(label="Download data as CSV", data=csv_data, file_name='hsk_vocabulary.csv', mime='text/csv')
+# Comment out this part to disable downloading
+# st.download_button(label="Download data as CSV", data=csv_data, file_name='hsk_vocabulary.csv', mime='text/csv')
