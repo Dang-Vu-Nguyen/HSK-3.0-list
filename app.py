@@ -151,13 +151,15 @@ st.dataframe(filtered_df, use_container_width=True)
 st.markdown('''
 
 ================
+
 Tài liệu được tổng hợp và biên soạn bởi Luyện Tiếng Trung 2. Với hy vọng bạn có thể học tập tiếng Trung thật hiệu quả.
+
 Xin vui lòng không sử dụng với mục đích thương mại mà không có sự cho phép của chúng mình.
 
 Nếu bạn thấy nội dung hữu ích và muốn ủng hộ chúng mình. Bạn có thể cân nhắc tặng chúng mình một cốc cà phê tại:
-Techcombank
-290667040209
-NGUYEN THI HONG KHANH
+- Techcombank
+- 290667040209
+- NGUYEN THI HONG KHANH
 
 Cám ơn bạn rất nhiều ạ!
 ''')
