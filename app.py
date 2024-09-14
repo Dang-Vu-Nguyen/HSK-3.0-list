@@ -4,12 +4,23 @@ import streamlit as st
 # Load the Excel file from GitHub (raw link)
 excel_file = 'https://github.com/Dang-Vu-Nguyen/HSK-3.0-list/raw/main/NewHSKvunotes.xlsx'
 
-# Specify the columns you want to display
-columns_to_display = ['STT - All', 'Level', 'STT - Per Level', 'Label', '中文', 'Pinyin', 
-                      '中文解释', '越南语意思', '中文例句', '越南语例句', '汉越', '例句汉越', '繁体中文例句']
+# Specify the columns to load (including those that need to be removed later)
+columns_to_load = ['STT - All', 'Level', 'STT - Per Level', 'Label', '中文', 'Pinyin', 
+                   '中文解释', '越南语意思', '中文例句', '越南语例句', '汉越', '例句汉越', '繁体中文例句']
 
 # Load the data into a dataframe
-df = pd.read_excel(excel_file, usecols=columns_to_display)
+df = pd.read_excel(excel_file, usecols=columns_to_load)
+
+# Remove unwanted columns: "Label", "中文解释"
+df = df.drop(columns=['Label', '中文解释'])
+
+# Rename the columns
+df = df.rename(columns={
+    'STT - All': 'No. (All)',
+    'STT - Per Level': 'No. (Per level)',
+    '中文': 'Từ vựng',
+    '越南语意思': 'Nghĩa Việt'
+})
 
 # Set up Streamlit
 st.set_page_config(page_title='HSK Vocabulary App')
@@ -29,7 +40,7 @@ Theo cấu trúc HSK 3.0 mới, sau 2021, mỗi cấp độ sẽ cần số từ
 
 Tổng cộng là 11092 từ.
 
-Tại đây, mình lập danh sách tất cả 11092 từ vựng. Mỗi từ vựng bao gồm Pinyin, Hán Việt, nghĩa tiếng Việt, câu ví dụ, và cả dạng Phồn Thể nữa.
+Tại đây, mình đã lập danh sách tất cả 11092 từ vựng. Mỗi từ vựng bao gồm Pinyin, Hán Việt, nghĩa tiếng Việt, câu ví dụ, và cả dạng Phồn Thể nữa.
 
 Hy vọng danh sách này sẽ hữu ích cho các bạn! Chúc các bạn học thật tốt nhé!
 
@@ -38,9 +49,8 @@ Hy vọng danh sách này sẽ hữu ích cho các bạn! Chúc các bạn học
 - Học theo cấu trúc HSK 2.0 (cũ): [Kênh YouTube Luyện Tiếng Trung](https://www.youtube.com/@luyentiengtrung)
 ''')
 
-
-# Display the dataframe in Streamlit
-st.dataframe(df)
+# Display the dataframe in Streamlit without the index
+st.dataframe(df, use_container_width=True)
 
 # If you want to allow users to download the data:
 @st.cache_data  # Updated to st.cache_data
@@ -50,5 +60,4 @@ def convert_df(df):
 csv_data = convert_df(df)
 
 # Button for downloading the filtered data
-# Comment out this part to disable downloading
 # st.download_button(label="Download data as CSV", data=csv_data, file_name='hsk_vocabulary.csv', mime='text/csv')
