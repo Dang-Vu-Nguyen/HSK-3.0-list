@@ -79,6 +79,8 @@ Hy vọng danh sách này sẽ hữu ích cho các bạn! Chúc các bạn học
 - Học bằng video và audio: [Kênh YouTube Luyện Tiếng Trung 2](https://www.youtube.com/@luyentiengtrung2)  
 - Học bằng thẻ từ vựng: [vunotes.com/tieng-trung](https://vunotes.com/tieng-trung)  
 - Học theo cấu trúc HSK 2.0 (cũ): [Kênh YouTube Luyện Tiếng Trung](https://www.youtube.com/@luyentiengtrung)
+
+
 ''')
 
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
@@ -146,16 +148,16 @@ filtered_df = filter_dataframe(df)
 # Display the filtered dataframe in Streamlit with custom header size
 st.dataframe(filtered_df, use_container_width=True)
 
-# Display the dataframe in Streamlit without the index
-# st.dataframe(df, use_container_width=True)
+st.markdown('''
 
-# Remove the download button section completely
-# If you want to allow users to download the data:
-# @st.cache_data
-# def convert_df(df):
-#     return df.to_csv(index=False).encode('utf-8')
-#
-# csv_data = convert_df(df)
-#
-# Button for downloading the filtered data
-# st.download_button(label="Download data as CSV", data=csv_data, file_name='hsk_vocabulary.csv', mime='text/csv')
+================
+Tài liệu được tổng hợp và biên soạn bởi Luyện Tiếng Trung 2. Với hy vọng bạn có thể học tập tiếng Trung thật hiệu quả.
+Xin vui lòng không sử dụng với mục đích thương mại mà không có sự cho phép của chúng mình.
+
+Nếu bạn thấy nội dung hữu ích và muốn ủng hộ chúng mình. Bạn có thể cân nhắc tặng chúng mình một cốc cà phê tại:
+Techcombank
+290667040209
+NGUYEN THI HONG KHANH
+
+Cám ơn bạn rất nhiều ạ!
+''')
