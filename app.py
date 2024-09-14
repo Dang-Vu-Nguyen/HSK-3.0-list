@@ -25,7 +25,7 @@ df = df.rename(columns={
     '越南语例句': 'Nghĩa câu mẫu',
     '繁体中文例句': 'Phồn thể',
     '例句汉越': 'Hán Việt câu mẫu',
-    'Pinyin例句': 'Pinyin câu mẫu,
+    'Pinyin例句': 'Pinyin câu mẫu',
 })
 
 # Re-select the columns to ensure correct order after renaming and dropping unwanted columns
