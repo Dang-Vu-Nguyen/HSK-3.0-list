@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 
 # Load the Excel file from GitHub (raw link)
-excel_file = 'https://github.com/Dang-Vu-Nguyen/HSK-3.0-list/raw/main/TestNewHSK.xlsx'
+excel_file = 'https://github.com/Dang-Vu-Nguyen/HSK-3.0-list/raw/main/NewHSKvunotes.xlsx'
 
 # Specify the columns you want to display
 columns_to_display = ['STT - All', 'Level', 'STT - Per Level', 'Label', '中文', 'Pinyin', 
