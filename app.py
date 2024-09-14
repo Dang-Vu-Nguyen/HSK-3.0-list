@@ -98,7 +98,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
         is_numeric_dtype,
     )
 
-    modify = st.checkbox("Add filters")
+    modify = st.checkbox("Tìm kiếm...", value=True))
 
     if not modify:
         return df
@@ -108,7 +108,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     modification_container = st.container()
 
     with modification_container:
-        to_filter_columns = st.multiselect("Filter dataframe on", df.columns)
+        to_filter_columns = st.multiselect("Tìm kiếm theo cột...", df.columns)
         for column in to_filter_columns:
             left, right = st.columns((1, 20))
             # Treat columns with < 10 unique values as categorical
