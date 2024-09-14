@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+from streamlit_extras.dataframe_explorer import filter_dataframe
 
 # Load the Excel file from GitHub (raw link)
 excel_file = 'https://github.com/Dang-Vu-Nguyen/HSK-3.0-list/raw/main/NewHSKvunotes.xlsx'
@@ -51,17 +52,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Custom CSS to change the column header size
-st.markdown("""
-    <style>
-    .dataframe thead th {
-        font-size: 20px !important;
-        color: white;
-        background-color: black;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
 # App Title and Description
 st.title('Toàn Bộ 11092 Từ Vựng HSK 3.0')
 st.subheader('Đã hoàn thành từ HSK1 đến HSK5')
@@ -86,8 +76,15 @@ Hy vọng danh sách này sẽ hữu ích cho các bạn! Chúc các bạn học
 - Học theo cấu trúc HSK 2.0 (cũ): [Kênh YouTube Luyện Tiếng Trung](https://www.youtube.com/@luyentiengtrung)
 ''')
 
+
+# Filterable DataFrame UI
+filtered_df = filter_dataframe(df)
+
+# Display the filtered dataframe in Streamlit with custom header size
+st.dataframe(filtered_df, use_container_width=True)
+
 # Display the dataframe in Streamlit without the index
-st.dataframe(df, use_container_width=True)
+# st.dataframe(df, use_container_width=True)
 
 # Remove the download button section completely
 # If you want to allow users to download the data:
