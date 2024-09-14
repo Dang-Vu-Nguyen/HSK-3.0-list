@@ -39,6 +39,29 @@ df.index = df.index + 1
 # Set up Streamlit
 st.set_page_config(page_title='HSK Vocabulary App')
 
+# Custom CSS to hide the toolbar (including download button)
+st.markdown(
+    """
+    <style>
+    [data-testid="stElementToolbar"] {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Custom CSS to change the column header size
+st.markdown("""
+    <style>
+    .dataframe thead th {
+        font-size: 20px !important;
+        color: white;
+        background-color: black;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # App Title and Description
 st.title('Toàn Bộ 11092 Từ Vựng HSK 3.0')
 st.subheader('Đã hoàn thành từ HSK1 đến HSK5')
