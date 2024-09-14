@@ -156,7 +156,7 @@ Tài liệu được tổng hợp và biên soạn bởi Luyện Tiếng Trung 2
 
 Xin vui lòng không sử dụng với mục đích thương mại mà không có sự cho phép của chúng mình.
 
-Nếu bạn thấy nội dung hữu ích và muốn ủng hộ chúng mình. Bạn có thể cân nhắc tặng chúng mình một cốc cà phê tại:
+Nếu bạn thấy nội dung hữu ích và muốn ủng hộ chúng mình, bạn có thể cân nhắc tặng chúng mình một cốc cà phê tại:
 - Techcombank
 - 290667040209
 - NGUYEN THI HONG KHANH
