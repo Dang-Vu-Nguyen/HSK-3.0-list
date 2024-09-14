@@ -5,8 +5,8 @@ import streamlit as st
 excel_file = 'https://github.com/Dang-Vu-Nguyen/HSK-3.0-list/raw/main/NewHSKvunotes.xlsx'
 
 # Specify the columns to load (including those that need to be removed later)
-columns_to_load = ['STT - All', 'Level', 'STT - Per Level', 'Label', '中文', 'Pinyin', 
-                   '中文解释', '越南语意思', '中文例句', '越南语例句', '汉越', '例句汉越', '繁体中文例句']
+columns_to_load = ['STT - All', 'Level', 'STT - Per Level', 'Label', '中文', 'Pinyin', '汉越',  
+                   '中文解释', '越南语意思', '中文例句', '越南语例句', '例句汉越', '繁体中文例句']
 
 # Load the data into a dataframe
 df = pd.read_excel(excel_file, usecols=columns_to_load)
@@ -20,6 +20,9 @@ df = df.rename(columns={
     'STT - Per Level': 'No. (Per level)',
     '中文': 'Từ vựng',
     '越南语意思': 'Nghĩa Việt'
+    '汉越': 'Hán Việt'
+    '中文例句': 'Câu ví dụ',
+    '越南语例句': 'Nghĩa câu ví dụ'
 })
 
 # Set up Streamlit
