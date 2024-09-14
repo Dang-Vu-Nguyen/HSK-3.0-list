@@ -1,6 +1,5 @@
 import pandas as pd
 import streamlit as st
-from streamlit_extras.dataframe_explorer import filter_dataframe
 
 # Load the Excel file from GitHub (raw link)
 excel_file = 'https://github.com/Dang-Vu-Nguyen/HSK-3.0-list/raw/main/NewHSKvunotes.xlsx'
