@@ -6,7 +6,7 @@ excel_file = 'https://github.com/Dang-Vu-Nguyen/HSK-3.0-list/raw/main/NewHSKvuno
 
 # Specify the columns to load (including those that need to be removed later)
 columns_to_load = ['STT - All', 'Level', 'STT - Per Level', 'Label', '中文', 'Pinyin', '汉越',  
-                   '中文解释', '越南语意思', '中文例句', '越南语例句', '例句汉越', '繁体中文例句']
+                   '中文解释', '越南语意思', '中文例句', '越南语例句', '繁体中文例句', '例句汉越']
 
 # Load the data into a dataframe
 df = pd.read_excel(excel_file, usecols=columns_to_load)
@@ -22,8 +22,15 @@ df = df.rename(columns={
     '越南语意思': 'Nghĩa Việt',
     '汉越': 'Hán Việt',
     '中文例句': 'Câu ví dụ',
-    '越南语例句': 'Nghĩa câu ví dụ'
+    '越南语例句': 'Nghĩa câu ví dụ',
+    '繁体中文例句': 'Phồn thể',
+    '例句汉越': 'Hán Việt của ví dụ'
 })
+
+# Re-select the columns to ensure correct order after renaming and dropping unwanted columns
+columns_to_display = ['No. (All)', 'Level', 'No. (Per level)', 'Từ vựng', 'Pinyin', 'Hán Việt',  
+                      'Nghĩa Việt', 'Câu ví dụ', 'Nghĩa câu ví dụ', 'Phồn thể', 'Hán Việt của ví dụ']
+df = df[columns_to_display]
 
 # Set up Streamlit
 st.set_page_config(page_title='HSK Vocabulary App')
