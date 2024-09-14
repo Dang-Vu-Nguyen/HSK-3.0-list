@@ -66,12 +66,13 @@ Hy vọng danh sách này sẽ hữu ích cho các bạn! Chúc các bạn học
 # Display the dataframe in Streamlit without the index
 st.dataframe(df, use_container_width=True)
 
+# Remove the download button section completely
 # If you want to allow users to download the data:
-@st.cache_data  # Updated to st.cache_data
-def convert_df(df):
-    return df.to_csv(index=False).encode('utf-8')
-
-csv_data = convert_df(df)
-
+# @st.cache_data
+# def convert_df(df):
+#     return df.to_csv(index=False).encode('utf-8')
+#
+# csv_data = convert_df(df)
+#
 # Button for downloading the filtered data
 # st.download_button(label="Download data as CSV", data=csv_data, file_name='hsk_vocabulary.csv', mime='text/csv')
