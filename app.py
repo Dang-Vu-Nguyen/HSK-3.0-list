@@ -98,10 +98,10 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
         is_numeric_dtype,
     )
 
-    modify = st.checkbox("Tìm kiếm...", value=True)
+    # modify = st.checkbox("Tìm kiếm...", value=True)
 
-    if not modify:
-        return df
+    # if not modify:
+    #     return df
 
     df = df.copy()
 
