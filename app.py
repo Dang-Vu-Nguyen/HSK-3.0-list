@@ -12,7 +12,7 @@ columns_to_load = ['STT - All', 'Level', 'STT - Per Level', 'Label', '中文', '
 df = pd.read_excel(excel_file, usecols=columns_to_load)
 
 # Remove unwanted columns: "Label", "中文解释"
-df = df.drop(columns=['Label', '中文解释'])
+df = df.drop(columns=['STT - All', 'Label', '中文解释'])
 
 # Rename the columns
 df = df.rename(columns={
@@ -29,9 +29,12 @@ df = df.rename(columns={
 })
 
 # Re-select the columns to ensure correct order after renaming and dropping unwanted columns
-columns_to_display = ['No. (All)', 'Level', 'No. (Per level)', 'Từ vựng', 'Pinyin', 'Hán Việt',  
+columns_to_display = ['Level', 'No. (Per level)', 'Từ vựng', 'Pinyin', 'Hán Việt',  
                       'Nghĩa Việt', 'Câu mẫu', 'Phồn thể', 'Pinyin câu mẫu', 'Nghĩa câu mẫu', 'Hán Việt câu mẫu']
 df = df[columns_to_display]
+
+# Reset index to start from 1 instead of 0
+df.index = df.index + 1
 
 # Set up Streamlit
 st.set_page_config(page_title='HSK Vocabulary App')
