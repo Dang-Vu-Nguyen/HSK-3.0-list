@@ -81,29 +81,6 @@ Hy vọng danh sách này sẽ hữu ích cho các bạn! Chúc các bạn học
 - Học theo cấu trúc HSK 2.0 (cũ): [Kênh YouTube Luyện Tiếng Trung](https://www.youtube.com/@luyentiengtrung)
 ''')
 
-
-# Filterable DataFrame UI
-filtered_df = filter_dataframe(df)
-
-# Display the filtered dataframe in Streamlit with custom header size
-st.dataframe(filtered_df, use_container_width=True)
-
-# Display the dataframe in Streamlit without the index
-# st.dataframe(df, use_container_width=True)
-
-# Remove the download button section completely
-# If you want to allow users to download the data:
-# @st.cache_data
-# def convert_df(df):
-#     return df.to_csv(index=False).encode('utf-8')
-#
-# csv_data = convert_df(df)
-#
-# Button for downloading the filtered data
-# st.download_button(label="Download data as CSV", data=csv_data, file_name='hsk_vocabulary.csv', mime='text/csv')
-
-
-
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """
     Adds a UI on top of a dataframe to let viewers filter columns
@@ -162,3 +139,23 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                     df = df[df[column].astype(str).str.contains(user_text_input, na=False, regex=False)]
 
     return df
+
+# Filterable DataFrame UI
+filtered_df = filter_dataframe(df)
+
+# Display the filtered dataframe in Streamlit with custom header size
+st.dataframe(filtered_df, use_container_width=True)
+
+# Display the dataframe in Streamlit without the index
+# st.dataframe(df, use_container_width=True)
+
+# Remove the download button section completely
+# If you want to allow users to download the data:
+# @st.cache_data
+# def convert_df(df):
+#     return df.to_csv(index=False).encode('utf-8')
+#
+# csv_data = convert_df(df)
+#
+# Button for downloading the filtered data
+# st.download_button(label="Download data as CSV", data=csv_data, file_name='hsk_vocabulary.csv', mime='text/csv')
