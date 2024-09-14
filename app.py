@@ -14,9 +14,15 @@ df = pd.read_excel(excel_file, usecols=columns_to_display)
 # Set up Streamlit
 st.set_page_config(page_title='HSK Vocabulary App')
 
-# Add title and subtitle to the app
-st.title('HSK Vocabulary Web App')
-st.subheader('Displaying the selected columns from the Excel file')
+# App Title and Description
+st.title('Toàn Bộ 11092 Từ Vựng HSK 3.0 - Từ HSK1 đến HSK9')
+st.subheader('Đã Hoàn thành Từ Vựng Đến Hết HSK 5')
+
+# Additional information for users
+st.markdown('''
+- Xem video có audio: [YouTube Channel](https://www.youtube.com/@luyentiengtrung2)  
+- Xem thẻ từ vựng: [vunotes.com/tieng-trung](https://vunotes.com/tieng-trung)
+''')
 
 # Display the dataframe in Streamlit
 st.dataframe(df)
