@@ -114,7 +114,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
             # Treat columns with < 10 unique values as categorical
             if is_categorical_dtype(df[column]) or df[column].nunique() < 10:
                 user_cat_input = right.multiselect(
-                    f"Từ khoá.. {column}",
+                    f"Tìm trong {column}...",
                     df[column].unique(),
                     default=list(df[column].unique()),
                 )
@@ -124,7 +124,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                 _max = float(df[column].max())
                 step = (_max - _min) / 100 if (_max - _min) != 0 else 1
                 user_num_input = right.slider(
-                    f"Từ khoá... {column}",
+                    f"Tìm trong {column}...",
                     min_value=_min,
                     max_value=_max,
                     value=(_min, _max),
@@ -133,7 +133,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                 df = df[df[column].between(*user_num_input)]
             else:
                 user_text_input = right.text_input(
-                    f"Tìm trong cột... {column}",
+                    f"Tìm trong {column}...",
                 )
                 if user_text_input:
                     df = df[df[column].astype(str).str.contains(user_text_input, na=False, regex=False)]
