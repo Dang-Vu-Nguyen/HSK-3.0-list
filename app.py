@@ -18,7 +18,7 @@ columns_to_load = ['STT - All', 'Level', 'STT - Per Level', 'Label', '中文', '
 df = pd.read_excel(excel_file, usecols=columns_to_load)
 
 # Remove unwanted columns: "Label", "中文解释"
-df = df.drop(columns=['STT - All', 'Label', '中文解释'])
+df = df.drop(columns=['STT - All', 'Label', '中文解释','STT - Per Level'])
 
 # Rename the columns
 df = df.rename(columns={
@@ -35,7 +35,7 @@ df = df.rename(columns={
 })
 
 # Re-select the columns to ensure correct order after renaming and dropping unwanted columns
-columns_to_display = ['Level', 'STT (of level)', 'Từ vựng', 'Pinyin', 'Hán Việt',  
+columns_to_display = ['Level', 'Từ vựng', 'Pinyin', 'Hán Việt',  
                       'Nghĩa Việt', 'Câu mẫu', 'Phồn thể', 'Pinyin câu mẫu', 'Nghĩa câu mẫu', 'Hán Việt câu mẫu']
 df = df[columns_to_display]
 
@@ -143,15 +143,8 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 # Filterable DataFrame UI
 filtered_df = filter_dataframe(df)
 
-
-# Pandas styling to control column widths
-df_styled = filtered_df.style.set_properties(subset=["STT (of level)"], **{'width': '80px'})
-
-# Display styled DataFrame
-st.dataframe(df_styled, use_container_width=True)
-
-# # Display the filtered dataframe in Streamlit with custom header size
-# st.dataframe(filtered_df, use_container_width=True)
+# Display the filtered dataframe in Streamlit with custom header size
+st.dataframe(filtered_df, use_container_width=True)
 
 # Display the dataframe in Streamlit without the index
 # st.dataframe(df, use_container_width=True)
