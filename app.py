@@ -83,6 +83,14 @@ Hy vọng danh sách này sẽ hữu ích cho các bạn! Chúc các bạn học
 
 ''')
 
+# Allow users to select which columns to display
+selected_columns = st.multiselect(
+    "Chọn các cột bạn muốn xem (để trống để xem toàn bộ):", 
+    options=columns_to_display,  # Provide all available columns
+    default=columns_to_display  # Display all by default
+)
+
+
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """
     Adds a UI on top of a dataframe to let viewers filter columns
@@ -145,8 +153,11 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 # Filterable DataFrame UI
 filtered_df = filter_dataframe(df)
 
-# Display the filtered dataframe in Streamlit with custom header size
-st.dataframe(filtered_df, use_container_width=True)
+# Display the filtered dataframe with only the selected columns
+if selected_columns:
+    st.dataframe(filtered_df[selected_columns], use_container_width=True)
+else:
+    st.write("Hãy chọn ít nhất một cột để xem.")
 
 st.markdown('''
 
