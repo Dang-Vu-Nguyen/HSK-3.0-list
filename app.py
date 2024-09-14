@@ -81,11 +81,13 @@ Hy vọng danh sách này sẽ hữu ích cho các bạn! Chúc các bạn học
 - Học theo cấu trúc HSK 2.0 (cũ): [Kênh YouTube Luyện Tiếng Trung](https://www.youtube.com/@luyentiengtrung)
 
 
+
+
 ''')
 
 # Allow users to select which columns to display
 selected_columns = st.multiselect(
-    "Chọn các cột bạn muốn xem (để trống để xem toàn bộ):", 
+    "Chọn các cột bạn muốn xem:", 
     options=columns_to_display,  # Provide all available columns
     default=columns_to_display  # Display all by default
 )
@@ -118,7 +120,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     modification_container = st.container()
 
     with modification_container:
-        to_filter_columns = st.multiselect("Tìm kiếm theo cột...", df.columns)
+        to_filter_columns = st.multiselect("Lọc/Tìm kiếm...", df.columns)
         for column in to_filter_columns:
             left, right = st.columns((1, 20))
             # Treat columns with < 10 unique values as categorical
