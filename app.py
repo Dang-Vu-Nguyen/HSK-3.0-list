@@ -59,7 +59,7 @@ st.markdown(
 
 # App Title and Description
 st.title('Toàn Bộ 11092 Từ Vựng HSK 3.0')
-st.subheader('Đã hoàn thành từ HSK1 đến HSK5')
+st.subheader('Đã hoàn thành từ HSK1 đến HSK5 (2024.09.14)')
 st.markdown('''
 Theo cấu trúc HSK 3.0 mới, sau 2021, mỗi cấp độ sẽ cần số từ vựng như sau:
 - HSK1: 500 từ
