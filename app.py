@@ -17,7 +17,7 @@ df = df.drop(columns=['STT - All', 'Label', '中文解释'])
 # Rename the columns
 df = df.rename(columns={
     'STT - All': 'No. (All)',
-    'STT - Per Level': 'No. (Per level)',
+    'STT - Per Level': 'STT (of level)',
     '中文': 'Từ vựng',
     '越南语意思': 'Nghĩa Việt',
     '汉越': 'Hán Việt',
@@ -29,7 +29,7 @@ df = df.rename(columns={
 })
 
 # Re-select the columns to ensure correct order after renaming and dropping unwanted columns
-columns_to_display = ['Level', 'No. (Per level)', 'Từ vựng', 'Pinyin', 'Hán Việt',  
+columns_to_display = ['Level', 'STT (of level)', 'Từ vựng', 'Pinyin', 'Hán Việt',  
                       'Nghĩa Việt', 'Câu mẫu', 'Phồn thể', 'Pinyin câu mẫu', 'Nghĩa câu mẫu', 'Hán Việt câu mẫu']
 df = df[columns_to_display]
 
