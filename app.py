@@ -19,8 +19,8 @@ df = df.rename(columns={
     'STT - All': 'No. (All)',
     'STT - Per Level': 'No. (Per level)',
     '中文': 'Từ vựng',
-    '越南语意思': 'Nghĩa Việt'
-    '汉越': 'Hán Việt'
+    '越南语意思': 'Nghĩa Việt',
+    '汉越': 'Hán Việt',
     '中文例句': 'Câu ví dụ',
     '越南语例句': 'Nghĩa câu ví dụ'
 })
