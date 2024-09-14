@@ -143,8 +143,15 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 # Filterable DataFrame UI
 filtered_df = filter_dataframe(df)
 
-# Display the filtered dataframe in Streamlit with custom header size
-st.dataframe(filtered_df, use_container_width=True)
+
+# Pandas styling to control column widths
+df_styled = filtered_df.style.set_properties(subset=["STT (of level)"], **{'width': '80px'})
+
+# Display styled DataFrame
+st.dataframe(df_styled, use_container_width=True)
+
+# # Display the filtered dataframe in Streamlit with custom header size
+# st.dataframe(filtered_df, use_container_width=True)
 
 # Display the dataframe in Streamlit without the index
 # st.dataframe(df, use_container_width=True)
