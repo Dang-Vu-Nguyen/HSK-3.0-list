@@ -26,9 +26,10 @@ Theo cấu trúc HSK 3.0 mới, sau 2021, mỗi cấp độ sẽ cần số từ
 - HSK5: 1071 từ
 - HSK6: 1140 từ
 - HSK7-9: 5636 từ
+
 Tổng cộng là 11092 từ.
 
-Tại đây, mình đã lập danh sách tất cả 11092 từ vựng. Mỗi từ vựng bao gồm Pinyin, Hán Việt, nghĩa tiếng Việt, câu ví dụ, và cả dạng Phồn Thể.
+Tại đây, mình lập danh sách tất cả 11092 từ vựng. Mỗi từ vựng bao gồm Pinyin, Hán Việt, nghĩa tiếng Việt, câu ví dụ, và cả dạng Phồn Thể nữa.
 
 Hy vọng danh sách này sẽ hữu ích cho các bạn! Chúc các bạn học thật tốt nhé!
 
