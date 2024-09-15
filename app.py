@@ -220,12 +220,6 @@ def display_random_row(df, section_title):
     
     # Display all combined fields at once
     st.write(row_display)
-    # Create a section for the countdown timer
-    timer_section = st.empty()
-    for i in range(10, 0, -1):
-    # Update the timer message using .format()
-        timer_section.write("Thời gian đến từ vựng ngẫu nhiên tiếp theo: {} s".format(i))
-        time.sleep(1)
 
 
 # Split the dataframe by levels (HSK1 to HSK5)
@@ -261,5 +255,12 @@ while True:
     with hsk5_section:
         display_random_row(hsk5_df, "HSK 5")
         # Countdown from 9 seconds (to account for processing time)
+
+    # Create a section for the countdown timer
+    timer_section = st.empty()
+    for i in range(10, 0, -1):
+    # Update the timer message using .format()
+        timer_section.write("Thời gian đến từ vựng ngẫu nhiên tiếp theo: {} s".format(i))
+        time.sleep(1)
     
 
