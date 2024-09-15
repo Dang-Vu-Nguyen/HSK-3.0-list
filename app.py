@@ -114,6 +114,8 @@ Cám ơn bạn rất nhiều ạ!
 
 ''')
 
+st.header("1. Bảng tổng hợp toàn bộ từ vựng")
+
 # Allow users to select which columns to display
 selected_columns = st.multiselect(
     "Chọn các cột bạn muốn xem:", 
@@ -180,8 +182,6 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                     df = df[df[column].astype(str).str.contains(user_text_input, na=False, regex=False)]
 
     return df
-
-st.header("1. Bảng tổng hợp toàn bộ từ vựng")
 
 # Filterable DataFrame UI
 filtered_df = filter_dataframe(df)
