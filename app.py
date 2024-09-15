@@ -238,22 +238,23 @@ hsk5_section = st.empty()
 
 # Loop to update random rows every second
 while True:
-    with hsk1_section:
-        display_random_row(hsk1_df, "HSK 1")
-    time.sleep(2)
-
-    with hsk2_section:
-        display_random_row(hsk2_df, "HSK 2")
-    time.sleep(2)
-
-    with hsk3_section:
-        display_random_row(hsk3_df, "HSK 3")
-    time.sleep(2)
-
-    with hsk4_section:
-        display_random_row(hsk4_df, "HSK 4")
-    time.sleep(2)
-
-    with hsk5_section:
-        display_random_row(hsk5_df, "HSK 5")
-    time.sleep(2)
+    with st.container():
+        with hsk1_section:
+            display_random_row(hsk1_df, "HSK 1")
+        time.sleep(2)
+    with st.container():
+        with hsk2_section:
+            display_random_row(hsk2_df, "HSK 2")
+        time.sleep(2)
+    with st.container():
+        with hsk3_section:
+            display_random_row(hsk3_df, "HSK 3")
+        time.sleep(2)
+    with st.container():
+        with hsk4_section:
+            display_random_row(hsk4_df, "HSK 4")
+        time.sleep(2)
+    with st.container():    
+        with hsk5_section:
+            display_random_row(hsk5_df, "HSK 5")
+        time.sleep(2)
