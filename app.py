@@ -229,14 +229,20 @@ hsk3_df = df[df['Level'] == 'HSK 3']
 hsk4_df = df[df['Level'] == 'HSK 4']
 hsk5_df = df[df['Level'] == 'HSK 5']
 
-# Create a section for the countdown timer
-timer_section = st.empty()
-
-# Create empty slots for each HSK level subsection
+# Create empty slots for the countdown timer and each HSK level subsection
+timer1_section = st.empty()
 hsk1_section = st.empty()
+
+timer2_section = st.empty()
 hsk2_section = st.empty()
+
+timer3_section = st.empty()
 hsk3_section = st.empty()
+
+timer4_section = st.empty()
 hsk4_section = st.empty()
+
+timer5_section = st.empty()
 hsk5_section = st.empty()
 
 
@@ -259,8 +265,14 @@ while True:
         display_random_row(hsk5_df, "HSK 5")
         # Countdown from 9 seconds (to account for processing time)
     for i in range(10, 0, -1):
-    # Update the timer message using .format()
-        timer_section.write("Thời gian đến từ vựng ngẫu nhiên tiếp theo: {} s".format(i))
+        # Update the timer messages for each HSK section
+        timer1_section.write("HSK 1 - Thời gian đến từ vựng ngẫu nhiên tiếp theo: {} s".format(i))
+        timer2_section.write("HSK 2 - Thời gian đến từ vựng ngẫu nhiên tiếp theo: {} s".format(i))
+        timer3_section.write("HSK 3 - Thời gian đến từ vựng ngẫu nhiên tiếp theo: {} s".format(i))
+        timer4_section.write("HSK 4 - Thời gian đến từ vựng ngẫu nhiên tiếp theo: {} s".format(i))
+        timer5_section.write("HSK 5 - Thời gian đến từ vựng ngẫu nhiên tiếp theo: {} s".format(i))
+        
+        # Wait for 1 second before updating the countdown
         time.sleep(1)
     
 
