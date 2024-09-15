@@ -163,7 +163,7 @@ else:
     st.write("Hãy chọn ít nhất một cột để xem.")
 
 #######################
-# New Section: Từ vựng ngẫu nhiên (fixed display)
+# New Section: Từ vựng ngẫu nhiên (with Section Titles)
 #######################
 
 st.header("Từ vựng ngẫu nhiên")
@@ -176,6 +176,7 @@ def display_random_row(df, section_title):
     
     random_row = df.sample(n=1).iloc[0]
     
+    # Display the section title (e.g., "HSK 1", "HSK 2", etc.)
     st.subheader(section_title)
     
     # Combine all fields into one string for display
@@ -209,23 +210,23 @@ hsk5_section = st.empty()
 # Loop to update random rows every second
 while True:
     with hsk1_section:
-        display_random_row(hsk1_df, "HSK 1")
+        display_random_row(hsk1_df, "HSK 1")  # Explicit section title
     time.sleep(1)
 
     with hsk2_section:
-        display_random_row(hsk2_df, "HSK 2")
+        display_random_row(hsk2_df, "HSK 2")  # Explicit section title
     time.sleep(1)
 
     with hsk3_section:
-        display_random_row(hsk3_df, "HSK 3")
+        display_random_row(hsk3_df, "HSK 3")  # Explicit section title
     time.sleep(1)
 
     with hsk4_section:
-        display_random_row(hsk4_df, "HSK 4")
+        display_random_row(hsk4_df, "HSK 4")  # Explicit section title
     time.sleep(1)
 
     with hsk5_section:
-        display_random_row(hsk5_df, "HSK 5")
+        display_random_row(hsk5_df, "HSK 5")  # Explicit section title
     time.sleep(1)
 
 
