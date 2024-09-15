@@ -229,6 +229,9 @@ hsk3_df = df[df['Level'] == 'HSK 3']
 hsk4_df = df[df['Level'] == 'HSK 4']
 hsk5_df = df[df['Level'] == 'HSK 5']
 
+# Create a section for the countdown timer
+timer_section = st.empty()
+
 # Create empty slots for each HSK level subsection
 hsk1_section = st.empty()
 hsk2_section = st.empty()
@@ -236,8 +239,7 @@ hsk3_section = st.empty()
 hsk4_section = st.empty()
 hsk5_section = st.empty()
 
-# Create a section for the countdown timer
-timer_section = st.empty()
+
 
 while True:
         
