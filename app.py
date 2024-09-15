@@ -94,6 +94,7 @@ Các link khác:
 
 ''')
 
+st.divider()
 st.markdown('''
 
 Lưu ý:
@@ -109,10 +110,10 @@ Nếu bạn thấy nội dung hữu ích và muốn ủng hộ chúng mình, b�
 
 Cám ơn bạn rất nhiều ạ!
 
-====
-
 
 ''')
+
+st.divider()
 
 st.header("1. Bảng tổng hợp toàn bộ từ vựng")
 
@@ -209,12 +210,12 @@ def display_random_row(df, section_title):
     # Combine the section title and all fields into one string for display
     row_display = (
         f"{section_title}\n"  # Display section title, e.g., "HSK 1"
-        f"- {random_row.get('Từ vựng', 'N/A')}, {random_row.get('Pinyin', 'N/A')}, {random_row.get('Hán Việt', 'N/A')}, {random_row.get('Nghĩa Việt', 'N/A')}\n\n"
-        f"- {random_row.get('Câu mẫu', 'N/A')}\n\n"
-        f"- {random_row.get('Phồn thể', 'N/A')}\n\n"
-        f"- {random_row.get('Pinyin câu mẫu', 'N/A')}\n\n"
-        f"- {random_row.get('Hán Việt câu mẫu', 'N/A')}\n\n"
-        f"- {random_row.get('Nghĩa câu mẫu', 'N/A')}"
+        f"- Từ vựng: {random_row.get('Từ vựng', 'N/A')}, {random_row.get('Pinyin', 'N/A')}, {random_row.get('Hán Việt', 'N/A')}, {random_row.get('Nghĩa Việt', 'N/A')}\n\n"
+        f"- Câu mẫu: {random_row.get('Câu mẫu', 'N/A')}\n\n"
+        f"- Phồn thể: {random_row.get('Phồn thể', 'N/A')}\n\n"
+        f"- Pinyin: {random_row.get('Pinyin câu mẫu', 'N/A')}\n\n"
+        f"- Hán Việt: {random_row.get('Hán Việt câu mẫu', 'N/A')}\n\n"
+        f"- Nghĩa: {random_row.get('Nghĩa câu mẫu', 'N/A')}"
     )
     
     # Display all combined fields at once
