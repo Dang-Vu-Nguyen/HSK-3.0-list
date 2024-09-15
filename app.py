@@ -161,6 +161,63 @@ if selected_columns:
 else:
     st.write("Hãy chọn ít nhất một cột để xem.")
 
+#######################
+# New Section: Từ vựng ngẫu nhiên
+#######################
+
+st.header("Từ vựng ngẫu nhiên")
+
+# Function to display a random row from a given dataframe
+def display_random_row(df, section_title):
+    random_row = df.sample(n=1).iloc[0]
+    st.subheader(section_title)
+    st.write(f"{random_row['Từ vựng']}, {random_row['Pinyin']}, {random_row['Hán Việt']}, {random_row['Nghĩa Việt']}")
+    st.write(f"{random_row['Câu mẫu']}")
+    st.write(f"{random_row['Phồn thể']}")
+    st.write(f"{random_row['Pinyin câu mẫu']}")
+    st.write(f"{random_row['Hán Việt câu mẫu']}")
+    st.write(f"{random_row['Nghĩa câu mẫu']}")
+
+# Split the dataframe by levels (HSK1 to HSK5)
+hsk1_df = df[df['Level'] == 'HSK 1']
+hsk2_df = df[df['Level'] == 'HSK 2']
+hsk3_df = df[df['Level'] == 'HSK 3']
+hsk4_df = df[df['Level'] == 'HSK 4']
+hsk5_df = df[df['Level'] == 'HSK 5']
+
+# Create empty slots for each HSK level subsection
+hsk1_section = st.empty()
+hsk2_section = st.empty()
+hsk3_section = st.empty()
+hsk4_section = st.empty()
+hsk5_section = st.empty()
+
+# Loop to update random rows every second
+while True:
+    with hsk1_section:
+        display_random_row(hsk1_df, "HSK 1")
+    time.sleep(1)
+
+    with hsk2_section:
+        display_random_row(hsk2_df, "HSK 2")
+    time.sleep(1)
+
+    with hsk3_section:
+        display_random_row(hsk3_df, "HSK 3")
+    time.sleep(1)
+
+    with hsk4_section:
+        display_random_row(hsk4_df, "HSK 4")
+    time.sleep(1)
+
+    with hsk5_section:
+        display_random_row(hsk5_df, "HSK 5")
+    time.sleep(1)
+
+#######################
+# Ending Section
+#######################
+
 st.markdown('''
 
 
