@@ -238,6 +238,10 @@ hsk5_section = st.empty()
 
 
 while True:
+    for i in range(9, 0, -1):
+        # Update the timer message
+        timer_section.write(f"Từ vựng ngẫu nhiên tiếp theo sau: {i} s")
+        time.sleep(1)    
     with hsk1_section:
         display_random_row(hsk1_df, "HSK 1")
     
@@ -253,8 +257,5 @@ while True:
     with hsk5_section:
         display_random_row(hsk5_df, "HSK 5")
         # Countdown from 9 seconds (to account for processing time)
-    for i in range(9, 0, -1):
-        # Update the timer message
-        timer_section.write(f"Từ vựng ngẫu nhiên tiếp theo sau: {i} s")
-        time.sleep(1)        
+    
 
