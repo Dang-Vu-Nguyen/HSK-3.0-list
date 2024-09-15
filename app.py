@@ -236,12 +236,15 @@ hsk3_section = st.empty()
 hsk4_section = st.empty()
 hsk5_section = st.empty()
 
+# Create a section for the countdown timer
+timer_section = st.empty()
 
 while True:
-    for i in range(9, 0, -1):
-        # Update the timer message
-        timer_section.write(f"Từ vựng ngẫu nhiên tiếp theo sau: {i} s")
-        time.sleep(1)    
+    for i in range(10, 0, -1):
+        # Update the timer message using .format()
+        timer_section.write("Thời gian đến từ vựng ngẫu nhiên tiếp theo: {} s".format(i))
+        time.sleep(1)
+        
     with hsk1_section:
         display_random_row(hsk1_df, "HSK 1")
     
