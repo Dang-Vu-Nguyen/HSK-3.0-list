@@ -266,11 +266,11 @@ while True:
         # Countdown from 9 seconds (to account for processing time)
     for i in range(10, 0, -1):
         # Update the timer messages for each HSK section
-        timer1_section.write("(Từ vựng tiếp theo sau {} s)".format(i))
-        timer2_section.write("(Từ vựng tiếp theo sau {} s)".format(i))
-        timer3_section.write("(Từ vựng tiếp theo sau {} s)".format(i))
-        timer4_section.write("(Từ vựng tiếp theo sau {} s)".format(i))
-        timer5_section.write("(Từ vựng tiếp theo sau {} s)".format(i))
+        timer1_section.write("({} s)".format(i))
+        timer2_section.write("({} s)".format(i))
+        timer3_section.write("({} s)".format(i))
+        timer4_section.write("({} s)".format(i))
+        timer5_section.write("({} s)".format(i))
         
         # Wait for 1 second before updating the countdown
         time.sleep(1)
