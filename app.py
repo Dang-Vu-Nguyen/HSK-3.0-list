@@ -75,13 +75,41 @@ Tổng cộng là 11092 từ.
 
 Tại đây, mình sẽ lập danh sách tất cả 11092 từ vựng. Mỗi từ vựng bao gồm Pinyin, Hán Việt, nghĩa tiếng Việt, câu ví dụ, và cả dạng Phồn Thể nữa.
 
+Phía dưới, bạn sẽ thấy có hai phần:
+
+1. Bảng tổng hợp toàn bộ từ vựng. Các bạn cũng có thể dùng chức năng lọc, tiềm kiếm và hiển thị để chọn/tìm xem những nội dung mong muốn.
+
+2. Bảng từ vựng ngẫu nhiên. Mỗi cấp độ sẽ chọn ra một từ vựng bất kỳ và hiển thị trong khoảng 5-6 giây.
+
 Hy vọng danh sách này sẽ hữu ích cho các bạn! Chúc các bạn học thật tốt nhé!
+
+Các link khác:
 
 - Học bằng video và audio: [Kênh YouTube Luyện Tiếng Trung 2](https://www.youtube.com/@luyentiengtrung2)  
 - Học bằng thẻ từ vựng: [vunotes.com/tieng-trung](https://vunotes.com/tieng-trung)  
 - Học theo cấu trúc HSK 2.0 (cũ): [Kênh YouTube Luyện Tiếng Trung](https://www.youtube.com/@luyentiengtrung)
 
 
+
+
+''')
+
+st.markdown('''
+
+Lưu ý:
+
+Tài liệu được tổng hợp và biên soạn bởi Luyện Tiếng Trung 2. Với hy vọng bạn có thể học tập tiếng Trung thật hiệu quả.
+
+Xin vui lòng không sử dụng với mục đích thương mại mà không có sự cho phép của chúng mình.
+
+Nếu bạn thấy nội dung hữu ích và muốn ủng hộ chúng mình, bạn có thể cân nhắc tặng chúng mình một cốc cà phê tại:
+- Techcombank
+- 290667040209
+- NGUYEN THI HONG KHANH
+
+Cám ơn bạn rất nhiều ạ!
+
+====
 
 
 ''')
@@ -153,6 +181,8 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
+st.header("1. Bảng tổng hợp toàn bộ từ vựng")
+
 # Filterable DataFrame UI
 filtered_df = filter_dataframe(df)
 
@@ -166,7 +196,7 @@ else:
 # New Section: Từ vựng ngẫu nhiên (with Titles in st.write)
 #######################
 
-st.header("Từ vựng ngẫu nhiên")
+st.header("2. Từ vựng ngẫu nhiên")
 
 # Function to display a random row from a given dataframe
 def display_random_row(df, section_title):
@@ -190,23 +220,6 @@ def display_random_row(df, section_title):
     # Display all combined fields at once
     st.write(row_display)
 
-# Display the static ending section before the infinite loop
-#######################
-# Ending Section
-#######################
-st.markdown('''
-
-Tài liệu được tổng hợp và biên soạn bởi Luyện Tiếng Trung 2. Với hy vọng bạn có thể học tập tiếng Trung thật hiệu quả.
-
-Xin vui lòng không sử dụng với mục đích thương mại mà không có sự cho phép của chúng mình.
-
-Nếu bạn thấy nội dung hữu ích và muốn ủng hộ chúng mình, bạn có thể cân nhắc tặng chúng mình một cốc cà phê tại:
-- Techcombank
-- 290667040209
-- NGUYEN THI HONG KHANH
-
-Cám ơn bạn rất nhiều ạ!
-''')
 
 # Split the dataframe by levels (HSK1 to HSK5)
 hsk1_df = df[df['Level'] == 'HSK 1']
