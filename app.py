@@ -163,7 +163,7 @@ else:
     st.write("Hãy chọn ít nhất một cột để xem.")
 
 #######################
-# New Section: Từ vựng ngẫu nhiên (with Section Titles)
+# New Section: Từ vựng ngẫu nhiên (with Titles in st.write)
 #######################
 
 st.header("Từ vựng ngẫu nhiên")
@@ -176,17 +176,15 @@ def display_random_row(df, section_title):
     
     random_row = df.sample(n=1).iloc[0]
     
-    # Display the section title (e.g., "HSK 1", "HSK 2", etc.)
-    st.subheader(section_title)
-    
-    # Combine all fields into one string for display
+    # Combine the section title and all fields into one string for display
     row_display = (
-        f"{random_row.get('Từ vựng', 'N/A')}, {random_row.get('Pinyin', 'N/A')}, {random_row.get('Hán Việt', 'N/A')}, {random_row.get('Nghĩa Việt', 'N/A')}\n\n"
-        f"{random_row.get('Câu mẫu', 'N/A')}\n\n"
-        f"{random_row.get('Phồn thể', 'N/A')}\n\n"
-        f"{random_row.get('Pinyin câu mẫu', 'N/A')}\n\n"
-        f"{random_row.get('Hán Việt câu mẫu', 'N/A')}\n\n"
-        f"{random_row.get('Nghĩa câu mẫu', 'N/A')}"
+        f"{section_title}\n"  # Display section title, e.g., "HSK 1"
+        f"- {random_row.get('Từ vựng', 'N/A')}, {random_row.get('Pinyin', 'N/A')}, {random_row.get('Hán Việt', 'N/A')}, {random_row.get('Nghĩa Việt', 'N/A')}\n\n"
+        f"- {random_row.get('Câu mẫu', 'N/A')}\n\n"
+        f"- {random_row.get('Phồn thể', 'N/A')}\n\n"
+        f"- {random_row.get('Pinyin câu mẫu', 'N/A')}\n\n"
+        f"- {random_row.get('Hán Việt câu mẫu', 'N/A')}\n\n"
+        f"- {random_row.get('Nghĩa câu mẫu', 'N/A')}"
     )
     
     # Display all combined fields at once
@@ -210,23 +208,23 @@ hsk5_section = st.empty()
 # Loop to update random rows every second
 while True:
     with hsk1_section:
-        display_random_row(hsk1_df, "HSK 1")  # Explicit section title
+        display_random_row(hsk1_df, "HSK 1")
     time.sleep(1)
 
     with hsk2_section:
-        display_random_row(hsk2_df, "HSK 2")  # Explicit section title
+        display_random_row(hsk2_df, "HSK 2")
     time.sleep(1)
 
     with hsk3_section:
-        display_random_row(hsk3_df, "HSK 3")  # Explicit section title
+        display_random_row(hsk3_df, "HSK 3")
     time.sleep(1)
 
     with hsk4_section:
-        display_random_row(hsk4_df, "HSK 4")  # Explicit section title
+        display_random_row(hsk4_df, "HSK 4")
     time.sleep(1)
 
     with hsk5_section:
-        display_random_row(hsk5_df, "HSK 5")  # Explicit section title
+        display_random_row(hsk5_df, "HSK 5")
     time.sleep(1)
 
 
