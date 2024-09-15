@@ -77,9 +77,13 @@ Tại đây, mình sẽ lập danh sách tất cả 11092 từ vựng. Mỗi t�
 
 Phía dưới, bạn sẽ thấy có hai phần:
 
-1. Bảng tổng hợp toàn bộ từ vựng. Các bạn cũng có thể dùng chức năng lọc, tiềm kiếm và hiển thị để chọn/tìm xem những nội dung mong muốn.
+1. Bảng tổng hợp toàn bộ từ vựng. 
 
-2. Bảng từ vựng ngẫu nhiên. Mỗi cấp độ sẽ chọn ra một từ vựng bất kỳ và hiển thị trong khoảng 5-6 giây.
+Các bạn cũng có thể dùng chức năng lọc, tìm kiếm và hiển thị để chọn/tìm xem những nội dung mong muốn.
+
+2. Bảng từ vựng ngẫu nhiên. 
+
+Mỗi cấp độ sẽ chọn ra một từ vựng bất kỳ và hiển thị trong 10 giây.
 
 Hy vọng danh sách này sẽ hữu ích cho các bạn! Chúc các bạn học thật tốt nhé!
 
@@ -97,11 +101,7 @@ Các link khác:
 st.divider()
 st.markdown('''
 
-Lưu ý:
-
-Tài liệu được tổng hợp và biên soạn bởi Luyện Tiếng Trung 2. Với hy vọng bạn có thể học tập tiếng Trung thật hiệu quả.
-
-Xin vui lòng không sử dụng với mục đích thương mại mà không có sự cho phép của chúng mình.
+Tài liệu được tổng hợp và biên soạn bởi Luyện Tiếng Trung 2. Xin vui lòng không sử dụng với mục đích thương mại mà không có sự cho phép của chúng mình.
 
 Nếu bạn thấy nội dung hữu ích và muốn ủng hộ chúng mình, bạn có thể cân nhắc tặng chúng mình một cốc cà phê tại:
 - Techcombank
@@ -240,20 +240,20 @@ hsk5_section = st.empty()
 while True:
     with hsk1_section:
         display_random_row(hsk1_df, "HSK 1")
-    time.sleep(1)
+    time.sleep(2)
 
     with hsk2_section:
         display_random_row(hsk2_df, "HSK 2")
-    time.sleep(1)
+    time.sleep(2)
 
     with hsk3_section:
         display_random_row(hsk3_df, "HSK 3")
-    time.sleep(1)
+    time.sleep(2)
 
     with hsk4_section:
         display_random_row(hsk4_df, "HSK 4")
-    time.sleep(1)
+    time.sleep(2)
 
     with hsk5_section:
         display_random_row(hsk5_df, "HSK 5")
-    time.sleep(1)
+    time.sleep(2)
