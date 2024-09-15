@@ -163,21 +163,34 @@ else:
     st.write("Hãy chọn ít nhất một cột để xem.")
 
 #######################
-# New Section: Từ vựng ngẫu nhiên
+# New Section: Từ vựng ngẫu nhiên (fixed display)
 #######################
 
 st.header("Từ vựng ngẫu nhiên")
 
 # Function to display a random row from a given dataframe
 def display_random_row(df, section_title):
+    if df.empty:
+        st.write(f"No data available for {section_title}")
+        return
+    
     random_row = df.sample(n=1).iloc[0]
+    
     st.subheader(section_title)
-    st.write(f"{random_row['Từ vựng']}, {random_row['Pinyin']}, {random_row['Hán Việt']}, {random_row['Nghĩa Việt']}")
-    st.write(f"{random_row['Câu mẫu']}")
-    st.write(f"{random_row['Phồn thể']}")
-    st.write(f"{random_row['Pinyin câu mẫu']}")
-    st.write(f"{random_row['Hán Việt câu mẫu']}")
-    st.write(f"{random_row['Nghĩa câu mẫu']}")
+    
+    # Combine all fields into one string for display
+    row_display = (
+        f"{random_row.get('Từ vựng', 'N/A')}, {random_row.get('Pinyin', 'N/A')}, {random_row.get('Hán Việt', 'N/A')}, {random_row.get('Nghĩa Việt', 'N/A')}\n\n"
+        f"{random_row.get('Câu mẫu', 'N/A')}\n\n"
+        f"{random_row.get('Phồn thể', 'N/A')}\n\n"
+        f"{random_row.get('Pinyin câu mẫu', 'N/A')}\n\n"
+        f"{random_row.get('Hán Việt câu mẫu', 'N/A')}\n\n"
+        f"{random_row.get('Nghĩa câu mẫu', 'N/A')}"
+    )
+    
+    # Display all combined fields at once
+    st.write(row_display)
+
 
 # Split the dataframe by levels (HSK1 to HSK5)
 hsk1_df = df[df['Level'] == 'HSK 1']
@@ -214,6 +227,7 @@ while True:
     with hsk5_section:
         display_random_row(hsk5_df, "HSK 5")
     time.sleep(1)
+
 
 #######################
 # Ending Section
