@@ -238,7 +238,7 @@ hsk5_section = st.empty()
 
 # Loop to update random rows every second
 while True:
-    with st.container():
+    with st.container(height=100):
         with hsk1_section:
             display_random_row(hsk1_df, "HSK 1")
         time.sleep(2)
