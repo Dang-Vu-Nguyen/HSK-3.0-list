@@ -190,6 +190,23 @@ def display_random_row(df, section_title):
     # Display all combined fields at once
     st.write(row_display)
 
+# Display the static ending section before the infinite loop
+#######################
+# Ending Section
+#######################
+st.markdown('''
+
+Tài liệu được tổng hợp và biên soạn bởi Luyện Tiếng Trung 2. Với hy vọng bạn có thể học tập tiếng Trung thật hiệu quả.
+
+Xin vui lòng không sử dụng với mục đích thương mại mà không có sự cho phép của chúng mình.
+
+Nếu bạn thấy nội dung hữu ích và muốn ủng hộ chúng mình, bạn có thể cân nhắc tặng chúng mình một cốc cà phê tại:
+- Techcombank
+- 290667040209
+- NGUYEN THI HONG KHANH
+
+Cám ơn bạn rất nhiều ạ!
+''')
 
 # Split the dataframe by levels (HSK1 to HSK5)
 hsk1_df = df[df['Level'] == 'HSK 1']
@@ -226,24 +243,3 @@ while True:
     with hsk5_section:
         display_random_row(hsk5_df, "HSK 5")
     time.sleep(1)
-
-
-#######################
-# Ending Section
-#######################
-
-st.markdown('''
-
-
-
-Tài liệu được tổng hợp và biên soạn bởi Luyện Tiếng Trung 2. Với hy vọng bạn có thể học tập tiếng Trung thật hiệu quả.
-
-Xin vui lòng không sử dụng với mục đích thương mại mà không có sự cho phép của chúng mình.
-
-Nếu bạn thấy nội dung hữu ích và muốn ủng hộ chúng mình, bạn có thể cân nhắc tặng chúng mình một cốc cà phê tại:
-- Techcombank
-- 290667040209
-- NGUYEN THI HONG KHANH
-
-Cám ơn bạn rất nhiều ạ!
-''')
