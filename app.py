@@ -83,7 +83,7 @@ Các bạn cũng có thể dùng chức năng lọc, tìm kiếm và hiển th�
 
 2. Bảng từ vựng ngẫu nhiên. 
 
-Mỗi cấp độ sẽ chọn ra một từ vựng bất kỳ và hiển thị trong 10 giây.
+Mỗi cấp độ sẽ chọn ra một từ vựng bất kỳ và hiển thị trong 15 giây.
 
 Hy vọng danh sách này sẽ hữu ích cho các bạn! Chúc các bạn học thật tốt nhé!
 
@@ -261,7 +261,7 @@ while True:
     with hsk5_section:
         display_random_row(hsk5_df, "HSK 5")
         # Countdown from 9 seconds (to account for processing time)
-    for i in range(10, 0, -1):
+    for i in range(15, 0, -1):
         # Update the timer messages for each HSK section
         timer1_section.write("({} s)".format(i))
         timer2_section.write("({} s)".format(i))
