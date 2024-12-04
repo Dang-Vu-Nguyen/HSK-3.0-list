@@ -211,6 +211,7 @@ hsk2_df = df[df['Level'] == 'HSK 2']
 hsk3_df = df[df['Level'] == 'HSK 3']
 hsk4_df = df[df['Level'] == 'HSK 4']
 hsk5_df = df[df['Level'] == 'HSK 5']
+hsk6_df = df[df['Level'] == 'HSK 6']
 
 # Create empty slots for the countdown timer and each HSK level subsection
 timer1_section = st.empty()
@@ -227,6 +228,9 @@ hsk4_section = st.empty()
 
 timer5_section = st.empty()
 hsk5_section = st.empty()
+
+timer6_section = st.empty()
+hsk6_section = st.empty()
 
 st.divider()
 
@@ -260,6 +264,9 @@ while True:
     
     with hsk5_section:
         display_random_row(hsk5_df, "HSK 5")
+
+    with hsk6_section:
+        display_random_row(hsk6_df, "HSK 6")
         # Countdown from 9 seconds (to account for processing time)
     for i in range(15, 0, -1):
         # Update the timer messages for each HSK section
@@ -268,6 +275,7 @@ while True:
         timer3_section.write("({} s)".format(i))
         timer4_section.write("({} s)".format(i))
         timer5_section.write("({} s)".format(i))
+        timer6_section.write("({} s)".format(i))
         
         # Wait for 1 second before updating the countdown
         time.sleep(1)
