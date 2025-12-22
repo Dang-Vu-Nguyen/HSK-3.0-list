@@ -235,7 +235,7 @@ hsk5_section = st.empty()
 timer6_section = st.empty()
 hsk6_section = st.empty()
 
-timer7_section = st.empty()
+timer79_section = st.empty()
 hsk79_section = st.empty()
 
 st.divider()
