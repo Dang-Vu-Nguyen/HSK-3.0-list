@@ -60,7 +60,7 @@ st.markdown(
 
 # App Title and Description
 st.title('Toàn Bộ 11092 Từ Vựng HSK 3.0')
-st.subheader('Đã hoàn thành từ HSK1 đến HSK6 (2024.12.03)')
+st.subheader('Đã hoàn thành từ HSK1 đến HSK6. Riêng HSK7-9 còn thiếu ~ 2000 từ (2025.12.22)')
 st.markdown('''
 Theo cấu trúc HSK 3.0 mới, sau 2021, mỗi cấp độ sẽ cần số từ vựng như sau:
 - HSK1: 500 từ
@@ -90,7 +90,7 @@ Hy vọng danh sách này sẽ hữu ích cho các bạn! Chúc các bạn học
 Các link khác:
 
 - Học bằng video và audio: [Kênh YouTube Luyện Tiếng Trung 2](https://www.youtube.com/@luyentiengtrung2)  
-- Học bằng thẻ từ vựng: [vunotes.com/tieng-trung](https://vunotes.com/tieng-trung)  
+- Học bằng thẻ từ vựng: [memogatary.com/languages/chinese](https://memogatary.com/languages/chinese/)  
 - Học theo cấu trúc HSK 2.0 (cũ): [Kênh YouTube Luyện Tiếng Trung](https://www.youtube.com/@luyentiengtrung)
 
 
@@ -212,6 +212,9 @@ hsk3_df = df[df['Level'] == 'HSK 3']
 hsk4_df = df[df['Level'] == 'HSK 4']
 hsk5_df = df[df['Level'] == 'HSK 5']
 hsk6_df = df[df['Level'] == 'HSK 6']
+hsk79_df = df[df['Level'] == 'HSK 7-9']
+
+
 
 # Create empty slots for the countdown timer and each HSK level subsection
 timer1_section = st.empty()
@@ -231,6 +234,9 @@ hsk5_section = st.empty()
 
 timer6_section = st.empty()
 hsk6_section = st.empty()
+
+timer7_section = st.empty()
+hsk79_section = st.empty()
 
 st.divider()
 
@@ -264,9 +270,12 @@ while True:
     
     with hsk5_section:
         display_random_row(hsk5_df, "HSK 5")
-
+        
     with hsk6_section:
         display_random_row(hsk6_df, "HSK 6")
+        
+    with hsk79_section:
+        display_random_row(hsk79_df, "HSK 7-9")
         # Countdown from 9 seconds (to account for processing time)
     for i in range(15, 0, -1):
         # Update the timer messages for each HSK section
@@ -276,6 +285,7 @@ while True:
         timer4_section.write("({} s)".format(i))
         timer5_section.write("({} s)".format(i))
         timer6_section.write("({} s)".format(i))
+        timer79_section.write("({} s)".format(i))
         
         # Wait for 1 second before updating the countdown
         time.sleep(1)
